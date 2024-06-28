@@ -1,5 +1,5 @@
 import { get } from '@/api/axios';
-import { API, BASE_CMS_URL } from '@/api/constants';
+import { API } from '@/api/constants';
 import { s3Url } from '@/constants/network';
 import { ButtonComponent, ButtonKey, CommonButtonComponent } from '@/types/components/button';
 import { DescriptionComponent } from '@/types/components/description';

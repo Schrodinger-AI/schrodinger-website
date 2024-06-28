@@ -39,6 +39,7 @@ jobs:
           build-args: |
             NEXT_PUBLIC_NETWORK_ENV=dev
             NEXT_PUBLIC_WEBSITE_NAME=schrodinger
+            BUILD_ENV=dev
   dispatch:
     runs-on: schrodinger-runner
     needs: build-and-push-image
