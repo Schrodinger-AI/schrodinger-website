@@ -11,8 +11,12 @@ WORKDIR ${web}
 
 COPY . ${web}
 
-RUN yarn \
-    && yarn build
+RUN yarn && \ 
+    if [ "$NEXT_PUBLIC_NETWORK_ENV" = "mainnet" ]; \
+    then yarn build:pro;\ 
+    elif [ "$NEXT_PUBLIC_NETWORK_ENV" = "dev" ]; \
+    then yarn build:dev; \
+    fi
 
 ENTRYPOINT yarn start
 
