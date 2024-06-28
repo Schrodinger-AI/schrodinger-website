@@ -7,7 +7,7 @@
     "out": "SKIP_SSR=1 next build && next export",
     "build:dev": "NEXT_PUBLIC_NETWORK_ENV=dev NEXT_PUBLIC_WEBSITE_NAME=schrodinger next build",
     "build:pro": "NEXT_PUBLIC_NETWORK_ENV=mainnet NEXT_PUBLIC_WEBSITE_NAME=schrodinger next build",
-    "build": "next build",
+    "build": "NEXT_PUBLIC_NETWORK_ENV=mainnet NEXT_PUBLIC_WEBSITE_NAME=schrodinger next build",
     "start": "next start",
     "lint": "next lint",
     "dev:analyze": "PORT=4000 ANALYZE=true next dev",

@@ -4,7 +4,7 @@ on:​
     branches: ['dev']​
 jobs:​
   build-and-push-image:​
-    runs-on: schrodinger-web-website-runner​
+    runs-on: schrodinger-runner
     permissions:​
       contents: read​
     outputs:​
@@ -41,7 +41,7 @@ jobs:​
             NEXT_PUBLIC_NETWORK_ENV=dev
             NEXT_PUBLIC_WEBSITE_NAME=schrodinger
   dispatch:​
-    runs-on: schrodinger-website-runner​
+    runs-on: schrodinger-runner​
     needs: build-and-push-image​
     steps:​
       - name: Deploy​
@@ -50,12 +50,12 @@ jobs:​
           github-token: ${{ secrets.TOK }}​
           script: |​
             await github.rest.actions.createWorkflowDispatch({​
-              owner: 'schrodingerWebWebsiteProject',​
+              owner: 'Schrodinger-AI',​
               repo: 'devops',​
-              workflow_id: 'deployment_mainnet.yaml',​
-              ref: 'main',​
+              workflow_id: 'deployment_testnet.yaml',​
+              ref: 'dev',​
               inputs: {​
-                appName: 'schrodinger-web-website-server',​
+                appName: 'schrodinger-web-website',​
                 commit_sha: 'sha-${{ needs.build-and-push-image.outputs.short_sha }}',​
               }​
             })
