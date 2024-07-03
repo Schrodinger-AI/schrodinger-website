@@ -59,6 +59,34 @@
           padding-right: 28px;
         }
       }
+
+      .brand-module-data-list {
+        margin-top: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        .brand-module-data-list-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 80px;
+          
+          .brand-module-data-list-card-value {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 48px;
+            color: $primary-text;
+          }
+
+          .brand-module-data-list-card-title {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: $dividers;
+          }
+        }
+      }
     }
     .mainImage {
       max-width: 640px;
@@ -110,6 +138,22 @@
           margin-top: 40px;
           justify-content: center;
         }
+        // TODO：mobile adaptation
+        // .brand-module-data-list {
+          
+  
+        //   .brand-module-data-list-card {
+            
+            
+        //     .brand-module-data-list-card-value {
+              
+        //     }
+  
+        //     .brand-module-data-list-card-title {
+              
+        //     }
+        //   }
+        // }
       }
     }
   }

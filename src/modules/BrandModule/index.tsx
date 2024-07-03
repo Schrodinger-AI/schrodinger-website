@@ -87,6 +87,20 @@ export default function BrandModule({ type, moduleData }: BrandModuleProps) {
               })}
             </div>
           )}
+
+          {/* TODO: serve value */}
+          {moduleData.dataList?.keyList.length ? (
+            <div className={styles['brand-module-data-list']}>
+              {moduleData.dataList.keyList.map((item) => {
+                return (
+                  <div className={styles['brand-module-data-list-card']} key={item.apiKey}>
+                    <p className={styles['brand-module-data-list-card-value']}>222</p>
+                    <p className={styles['brand-module-data-list-card-title']}>{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </section>
 
         {/* section 4: hero image */}

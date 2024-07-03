@@ -15,6 +15,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'schrodinger-testnet.s3.amazonaws.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'schrodinger.s3.amazonaws.com',
+      },
     ],
   },
   sassOptions: {
