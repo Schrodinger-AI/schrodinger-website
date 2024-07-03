@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import useGetVertical from '@/hooks/useGetVertical';
 
 import styles from './styles.module.scss';
-import { Radio } from 'antd';
+import { Descriptions, Radio } from 'antd';
 import { useMemo, useState } from 'react';
 import LineChart from '@/components/TabsContent/LineChart';
 import { ITabsModule, ITabsModuleItemsContent } from '@/types/modules/tabsModule';
 import TabsImage from '@/components/TabsContent/TabsImage';
+import DescriptionList from '@/components/TabsContent/DescriptionList';
 
 export default function TabsModule({ module }: { module: ITabsModule }) {
   const { getVertical } = useGetVertical();
@@ -35,6 +36,10 @@ export default function TabsModule({ module }: { module: ITabsModule }) {
         return currentContent.imageUrl ? (
           <TabsImage image={currentContent.imageUrl} imageUrlMobile={currentContent.imageUrlMobile} />
         ) : null;
+      case 'purchaseCard':
+        return null;
+      case 'descriptionList':
+        return <DescriptionList data={currentContent.dataList} />;
       default:
         return null;
     }

@@ -5,12 +5,15 @@ export interface ITabsModuleItemsContentDataList {
   value: string;
   format?: 'number' | 'abbreviate';
   service?: string;
+  title?: string;
+  content?: string;
+  imgUrl?: string;
 }
 
 export interface ITabsModuleItemsContent {
   tabKey: string;
   tabLabel: string;
-  contentType: 'lineChart' | 'imageCard';
+  contentType: 'lineChart' | 'imageCard' | 'purchaseCard' | 'descriptionList';
   imageUrl?: string;
   imageUrlMobile?: string;
   lineData?: {

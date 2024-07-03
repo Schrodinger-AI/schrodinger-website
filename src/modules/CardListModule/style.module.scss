@@ -38,7 +38,6 @@
 
 .cardItem {
   border-radius: 16px;
-  border: 2px solid var(--border);
   width: 100%;
   overflow: hidden;
   max-width: 728px;
@@ -94,7 +93,7 @@
     line-height: 22px; 
   }
   .cardImgContainer {
-    height: 212px;
+    height: 156px;
   }
   .title {
     font-size: 30px;
@@ -109,20 +108,20 @@
 @media screen and (min-width: 580px) and (max-width: 991px) {
   .cardImg {
     padding: 0;
-    img {
-      width: 438px;
-      height: 200px !important;
-    }
+    // img {
+    //   width: 438px;
+    //   height: 200px !important;
+    // }
   }
 }
 
 @media screen and (max-width: 579px) {
   .cardImg {
     padding: 0;
-    img {
-      width: 294px;
-      height: 134px !important;
-    }
+    // img {
+    //   width: 294px;
+    //   height: 134px !important;
+    // }
   }
 }
 
