@@ -22,7 +22,8 @@ export interface IBrandModule {
     defaultBackgroundColor?: string;
   };
   dataList?: {
-    serve: string;
+    service: string;
+    params: any;
     keyList: {
       text: string;
       apiKey: string;

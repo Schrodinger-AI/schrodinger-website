@@ -1,5 +1,12 @@
 import { ModuleType } from '.';
 
+export interface ITabsModuleItemsContentDataList {
+  label: string;
+  value: string;
+  format?: 'number' | 'abbreviate';
+  service?: string;
+}
+
 export interface ITabsModuleItemsContent {
   tabKey: string;
   tabLabel: string;
@@ -12,10 +19,7 @@ export interface ITabsModuleItemsContent {
     chartId: string;
     lineColor?: string;
   };
-  dataList?: {
-    label: string;
-    value: string;
-  }[];
+  dataList?: ITabsModuleItemsContentDataList[];
 }
 
 export interface ITabsModule {
