@@ -15,7 +15,23 @@ export default function LineChart({
   useEffect(() => {
     if (!document.getElementById(lineData?.chartId || 'main')) return;
     const myChart = echarts.init(document.getElementById(lineData?.chartId || 'main'));
-    const option = getLineChartConfig(lineData);
+    const areaStyle = {
+      color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+        {
+          offset: 0,
+          color: 'rgba(56, 136, 255, 0.4)',
+        },
+        {
+          offset: 1,
+          color: 'rgba(56, 136, 255, 0)',
+        },
+      ]),
+    };
+    const option = getLineChartConfig(lineData, {
+      areaStyle,
+      grid: lineData?.grid,
+      yAxisLabelFormatter: lineData?.yAxisLabelFormatter,
+    });
     myChart.setOption(option);
   }, [lineData, lineData?.chartId, lineData?.dataX, lineData?.dataY, lineData?.lineColor]);
 

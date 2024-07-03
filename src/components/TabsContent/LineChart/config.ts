@@ -1,9 +1,21 @@
 import { ITabsModuleItemsContent } from '@/types/modules/tabsModule';
 
-export const getLineChartConfig = (lineData: ITabsModuleItemsContent['lineData']) => {
+export const getLineChartConfig = (
+  lineData: ITabsModuleItemsContent['lineData'],
+  params?: {
+    areaStyle?: any;
+    grid?: any;
+    yAxisLabelFormatter?: string;
+  },
+) => {
   return {
     title: {
       text: '',
+    },
+    grid: params?.grid || {
+      top: 10,
+      right: 20,
+      bottom: 20,
     },
     tooltip: {
       show: true,
@@ -24,13 +36,15 @@ export const getLineChartConfig = (lineData: ITabsModuleItemsContent['lineData']
     },
     yAxis: {
       type: 'value',
-      splitArea: {
+      splitLine: {
         show: false,
       },
-      show: true,
       min: 0,
       max: 'dataMax',
-      splitNumber: 5,
+      splitNumber: 1,
+      axisLabel: {
+        formatter: params?.yAxisLabelFormatter ? params.yAxisLabelFormatter : null,
+      },
     },
     visualMap: {
       type: 'piecewise',
@@ -41,7 +55,7 @@ export const getLineChartConfig = (lineData: ITabsModuleItemsContent['lineData']
         {
           gt: 0,
           lt: lineData?.dataX.length,
-          color: 'rgba(56, 136, 255, 0.4)',
+          color: 'rgba(56, 136, 255)',
         },
       ],
     },
@@ -53,8 +67,11 @@ export const getLineChartConfig = (lineData: ITabsModuleItemsContent['lineData']
           color: lineData?.lineColor || '#3888FF',
           width: 3,
         },
+        itemStyle: {
+          borderWidth: 4,
+        },
         symbolSize: 8,
-        areaStyle: {},
+        areaStyle: params?.areaStyle,
       },
     ],
   };

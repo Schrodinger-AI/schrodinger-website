@@ -21,6 +21,13 @@ export interface ITabsModuleItemsContent {
     dataY: number[];
     chartId: string;
     lineColor?: string;
+    grid?: {
+      top?: string | number;
+      right?: string | number;
+      left?: string | number;
+      bottom?: string | number;
+    };
+    yAxisLabelFormatter?: string;
   };
   dataList?: ITabsModuleItemsContentDataList[];
 }
