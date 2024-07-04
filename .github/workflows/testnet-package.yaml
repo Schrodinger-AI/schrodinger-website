@@ -53,7 +53,7 @@ jobs:
               owner: 'Schrodinger-AI',
               repo: 'devops',
               workflow_id: 'deployment_testnet.yaml',
-              ref: 'dev',
+              ref: 'main',
               inputs: {
                 appName: 'schrodinger-web-website',
                 commit_sha: 'sha-${{ needs.build-and-push-image.outputs.short_sha }}',
