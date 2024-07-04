@@ -16,6 +16,12 @@ export interface ITabsModuleItemsContent {
   contentType: 'lineChart' | 'imageCard' | 'purchaseCard' | 'descriptionList';
   imageUrl?: string;
   imageUrlMobile?: string;
+  description?: string;
+  title?: string;
+  button?: {
+    text: string;
+    link?: string;
+  };
   lineData?: {
     dataX: string[];
     dataY: number[];
