@@ -28,6 +28,7 @@ export const getLineChartConfig = (
       textStyle: {
         color: '#ffffff',
       },
+      borderColor: '#2E2E3A',
     },
     xAxis: {
       type: 'category',
