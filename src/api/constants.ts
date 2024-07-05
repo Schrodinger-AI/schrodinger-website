@@ -6,6 +6,11 @@ export const BASE_CMS_URL =
     ? BackEndNetWorkMap[NEXT_PUBLIC_WEBSITE_NAME][NEXT_PUBLIC_NETWORK_ENV]?.cmsUrl
     : '';
 
+export const BASE_API_URL =
+  NEXT_PUBLIC_WEBSITE_NAME && NEXT_PUBLIC_NETWORK_ENV
+    ? BackEndNetWorkMap[NEXT_PUBLIC_WEBSITE_NAME][NEXT_PUBLIC_NETWORK_ENV]?.apiUrl
+    : '';
+
 export const BASE_DOWNLOAD_URL = BASE_CMS_URL + 'assets/';
 
 export const API = {

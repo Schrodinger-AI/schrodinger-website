@@ -10,6 +10,9 @@ import { s3Url } from '@/constants/network';
 import { openWithBlank } from '@/utils/router';
 import CommonButton from '@/components/CommonButton';
 import useGetVertical from '@/hooks/useGetVertical';
+import { useCallback, useEffect, useState } from 'react';
+import { serveGet } from '@/api/axios';
+import { formatTokenPrice } from '@/utils/format';
 
 export interface BrandModuleProps {
   type: DEVICE_TYPE;
@@ -18,6 +21,26 @@ export interface BrandModuleProps {
 
 export default function BrandModule({ type, moduleData }: BrandModuleProps) {
   const { getVertical } = useGetVertical();
+  const [dataListValue, setDataListValue] = useState<Record<string, number>>();
+
+  const getDataListValue = useCallback(
+    async (service: string) => {
+      try {
+        const res = await serveGet(service, moduleData.dataList?.params);
+        console.log('=====BrandModule', res);
+        setDataListValue(res);
+        // eslint-disable-next-line no-empty
+      } catch (error) {}
+    },
+    [moduleData.dataList?.params],
+  );
+
+  useEffect(() => {
+    if (moduleData.dataList?.service) {
+      getDataListValue(moduleData.dataList?.service);
+    }
+  }, [getDataListValue, moduleData.dataList?.service]);
+
   return (
     <section
       className={clsx([
@@ -87,6 +110,25 @@ export default function BrandModule({ type, moduleData }: BrandModuleProps) {
               })}
             </div>
           )}
+
+          {moduleData.dataList?.keyList.length ? (
+            <div className={styles['brand-module-data-list']}>
+              {moduleData.dataList.keyList.map((item) => {
+                return (
+                  <div className={styles['brand-module-data-list-card']} key={item.apiKey}>
+                    <p className={styles['brand-module-data-list-card-value']}>
+                      {dataListValue?.[item.apiKey]
+                        ? formatTokenPrice(dataListValue?.[item.apiKey], {
+                            decimalPlaces: 2,
+                          })
+                        : '--'}
+                    </p>
+                    <p className={styles['brand-module-data-list-card-title']}>{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </section>
 
         {/* section 4: hero image */}

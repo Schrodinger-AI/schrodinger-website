@@ -12,8 +12,8 @@ export default function useGetVertical() {
             bottom: mobilePaddingBottom ?? Number(paddingBottom || 120) / 2,
           }
         : {
-            top: paddingTop ?? 120,
-            bottom: paddingBottom ?? 120,
+            top: paddingTop ?? 80,
+            bottom: paddingBottom ?? 80,
           };
     },
     [isMobile],

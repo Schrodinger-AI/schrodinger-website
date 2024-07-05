@@ -10,6 +10,7 @@ export interface ICardListModule {
   subTitle?: {
     text: string;
   };
+  name?: string;
   dataArray?: Array<DescriptionComponent>;
   commonStyles: {
     paddingTop?: string;

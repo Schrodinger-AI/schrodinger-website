@@ -8,13 +8,14 @@ import { IHomePageProps } from '@/types/pages/home';
 import GraphicTextModule from '@/modules/GraphicTextModule';
 import { ModuleType } from '@/types/modules';
 import { getGlobalConfig } from '@/api/utils';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
 import CardListModule from '@/modules/CardListModule';
 import PartnersModule from '@/modules/PartnersModule';
 import FeatureCardModule from '@/modules/FeatureCardModule';
 import InfiniteScrollCarouselModule from '@/modules/InfiniteScrollCarouselModule';
 import { ButtonBelowTextModule } from '@/modules/ButtonBelowText';
+import TabsModule from '@/modules/TabsModule';
 
 export default function HomeMain({ headerData, footerData, pageData }: IHomePageProps) {
   const uaType = useUserAgent();
@@ -36,6 +37,25 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
   useEffectOnce(() => {
     setGlobalConfig();
   });
+
+  useEffect(() => {
+    if (pageData?.moduleList.length) {
+      const hash = window.location.hash;
+      const id = hash ? hash.split('#')[1] : '';
+      if (id) {
+        const timer = setTimeout(() => {
+          const doc = document.getElementById(id);
+          if (doc) {
+            doc.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+          clearTimeout(timer);
+        }, 500);
+      }
+    }
+  }, [pageData?.moduleList.length]);
 
   return (
     <main className="home-page">
@@ -66,6 +86,9 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
           }
           if (module.key === ModuleType.ButtonBelowTextModule) {
             return <ButtonBelowTextModule key={pageData.key + '_' + index + '_' + module.key} module={module} />;
+          }
+          if (module.key === ModuleType.TabsModule) {
+            return <TabsModule key={pageData.key + '_' + index + '_' + module.key} module={module} />;
           }
           return <></>;
         })}

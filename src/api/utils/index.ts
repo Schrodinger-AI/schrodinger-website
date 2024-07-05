@@ -1,5 +1,5 @@
 import { get } from '@/api/axios';
-import { API, BASE_CMS_URL } from '@/api/constants';
+import { API } from '@/api/constants';
 import { s3Url } from '@/constants/network';
 import { ButtonComponent, ButtonKey, CommonButtonComponent } from '@/types/components/button';
 import { DescriptionComponent } from '@/types/components/description';
@@ -162,6 +162,7 @@ const formatModule = (moduleItem: any): Module | undefined => {
           mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
           defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
         },
+        dataList: moduleItem.data_list,
       };
     case ModuleType.GraphicTextModule:
       return {
@@ -197,6 +198,7 @@ const formatModule = (moduleItem: any): Module | undefined => {
         subTitle: {
           text: moduleItem.subTitle,
         },
+        name: moduleItem.name,
         dataArray: formatDescriptionList(moduleItem.dataArray),
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,
@@ -276,6 +278,19 @@ const formatModule = (moduleItem: any): Module | undefined => {
             }
           : undefined,
         carouselList: formatCarouselList(moduleItem.carouselList),
+        commonStyles: {
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
+          defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
+        },
+      };
+    case ModuleType.TabsModule:
+      return {
+        key: ModuleType.TabsModule,
+        index: moduleItem.index,
+        content: moduleItem.content,
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,
           paddingBottom: moduleItem.paddingBottom || undefined,

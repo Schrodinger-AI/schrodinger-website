@@ -59,6 +59,33 @@
           padding-right: 28px;
         }
       }
+
+      .brand-module-data-list {
+        margin-top: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 68px;
+
+        .brand-module-data-list-card {
+          display: flex;
+          flex-direction: column;
+          
+          .brand-module-data-list-card-value {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 48px;
+            color: $primary-text;
+          }
+
+          .brand-module-data-list-card-title {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: $dividers;
+            margin-top: 8px;
+          }
+        }
+      }
     }
     .mainImage {
       max-width: 640px;
@@ -86,16 +113,15 @@
 
   @media screen and (max-width: $divide-991) {
     .brandModule {
-      padding-bottom: 60px;
       flex-direction: column;
-
       .brandModuleLeft {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-right: 0;
-        padding-top: 48px;
+        padding-top: 0;
         padding-bottom: 40px;
+        width: 100%;
         .title {
           font-size: 36px;
           line-height: 48px;
@@ -109,6 +135,26 @@
         .buttonGroup {
           margin-top: 40px;
           justify-content: center;
+        }
+        .brand-module-data-list {
+          width: 100%;
+          display: flex;
+          gap: 0;
+          justify-content: space-between;
+  
+          .brand-module-data-list-card {
+            align-items: center;
+            
+            .brand-module-data-list-card-value {
+              font-size: 20px;
+              line-height: 28px;
+            }
+  
+            .brand-module-data-list-card-title {
+              font-size: 12px;
+              line-height: 20px;
+            }
+          }
         }
       }
     }
@@ -153,12 +199,6 @@
       height: 600px;
     }
   }
-
-  // @media screen and (max-width: $divide-991) {
-  //   .desc {
-  //     text-align: center;
-  //   }
-  // }
 
   @media screen and (min-width: 1079px) {
     max-width: $content-width-large-desktop;

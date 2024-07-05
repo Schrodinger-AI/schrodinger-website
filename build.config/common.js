@@ -12,9 +12,12 @@ module.exports = {
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '192.168.71.105',
-        port: '8055',
+        protocol: 'https',
+        hostname: 'schrodinger-testnet.s3.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'schrodinger.s3.amazonaws.com',
       },
     ],
   },

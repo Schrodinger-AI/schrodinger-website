@@ -21,6 +21,14 @@ export interface IBrandModule {
     mobilePaddingBottom?: string;
     defaultBackgroundColor?: string;
   };
+  dataList?: {
+    service: string;
+    params: any;
+    keyList: {
+      text: string;
+      apiKey: string;
+    }[];
+  };
 }
 
 export enum BrandModuleType {
