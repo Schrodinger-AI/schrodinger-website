@@ -15,7 +15,7 @@ export const BackEndNetWorkMap: Record<string, WebsiteNetworkConfig> = {
     mainnet: {
       cmsUrl: 'https://mainnet-cms.schrodingernft.ai/',
       apiUrl: 'https://sgr.schrodingernft.ai/api/',
-      s3Url: 'https://schrodinger.s3.amazonaws.com/',
+      s3Url: 'https://schrodinger-mainnet.s3.amazonaws.com/',
     },
   },
   // Add More ...
