@@ -8,11 +8,13 @@ export type WebsiteNetworkConfig = {
 export const BackEndNetWorkMap: Record<string, WebsiteNetworkConfig> = {
   schrodinger: {
     dev: {
-      cmsUrl: 'http://192.168.71.105:8055/',
-      s3Url: 'http://192.168.71.105:8055/assets/',
+      cmsUrl: 'https://testnet-cms.schrodingerai.com/',
+      apiUrl: 'https://sgr.schrodingerai.com/api/',
+      s3Url: 'https://schrodinger-testnet.s3.amazonaws.com/',
     },
     mainnet: {
-      cmsUrl: 'https://schrodingernft.ai/',
+      cmsUrl: 'https://mainnet-cms.schrodingernft.ai/',
+      apiUrl: 'https://sgr.schrodingernft.ai/api/',
       s3Url: 'https://schrodinger.s3.amazonaws.com/',
     },
   },

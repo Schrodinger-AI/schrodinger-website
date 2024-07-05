@@ -47,7 +47,7 @@
 
 .featureCardWrapperHover {
   &:hover {
-    background: $brand !important;
+    background: $border !important;
     .cardTitle {
       color: $white-text;
     }

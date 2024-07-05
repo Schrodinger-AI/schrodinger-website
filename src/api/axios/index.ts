@@ -7,7 +7,7 @@
 import { configure } from 'axios-hooks';
 import LRU from 'lru-cache';
 import Axios from 'axios';
-import { BASE_CMS_URL } from '@/api/constants';
+import { BASE_API_URL, BASE_CMS_URL } from '@/api/constants';
 import { interceptorsBind } from './utils';
 import { create } from 'apisauce';
 
@@ -28,6 +28,10 @@ const api = create({
   baseURL: BASE_CMS_URL,
 });
 
+const serveApi = create({
+  baseURL: BASE_API_URL,
+});
+
 const get = async (url: string, params?: any, config?: any) => {
   const res = await api.get(url, params, config);
   if (res.ok) {
@@ -37,4 +41,19 @@ const get = async (url: string, params?: any, config?: any) => {
   }
 };
 
-export { get };
+const serveGet = async (url: string, params?: any, config?: any) => {
+  const res = await serveApi.get(url, params, config);
+
+  const data = res?.data as unknown as {
+    code: string;
+    data: any;
+    message: string;
+  };
+  if (res.ok && data?.code === '20000') {
+    return data.data as any;
+  } else {
+    throw Error('fetch failed, please try again');
+  }
+};
+
+export { get, serveGet };

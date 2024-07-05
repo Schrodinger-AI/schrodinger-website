@@ -10,7 +10,7 @@ export interface ICardListModuleProps {
 }
 
 export default function CardListModule({ moduleData }: ICardListModuleProps) {
-  const { title, subTitle, dataArray, commonStyles } = moduleData;
+  const { title, subTitle, dataArray, commonStyles, name } = moduleData;
   const { getVertical } = useGetVertical();
 
   const cardList = (
@@ -49,6 +49,7 @@ export default function CardListModule({ moduleData }: ICardListModuleProps) {
   );
   return (
     <section
+      id={name}
       className={clsx(['section-container', styles.cardListModuleWrap])}
       style={{
         backgroundColor: commonStyles.defaultBackgroundColor,

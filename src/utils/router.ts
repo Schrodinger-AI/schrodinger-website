@@ -6,7 +6,7 @@ export function jumpOrScrollToTop(path: ROUTER, callback?: () => void): void {
     window.scrollTo(0, 0);
     callback?.();
   } else {
-    router.push(path);
+    window.open(path, '_self');
   }
 }
 
