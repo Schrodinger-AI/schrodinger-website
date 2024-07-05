@@ -8,7 +8,7 @@ export default function useGetVertical() {
     ({ paddingTop, paddingBottom, mobilePaddingTop, mobilePaddingBottom }: Record<string, any>) => {
       return isMobile
         ? {
-            top: mobilePaddingTop ?? Number(paddingTop || 120) / 2,
+            top: mobilePaddingTop ?? Number(paddingTop || 80) / 2,
             bottom: mobilePaddingBottom ?? Number(paddingBottom || 120) / 2,
           }
         : {
