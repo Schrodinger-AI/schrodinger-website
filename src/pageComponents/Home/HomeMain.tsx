@@ -8,7 +8,7 @@ import { IHomePageProps } from '@/types/pages/home';
 import GraphicTextModule from '@/modules/GraphicTextModule';
 import { ModuleType } from '@/types/modules';
 import { getGlobalConfig } from '@/api/utils';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
 import CardListModule from '@/modules/CardListModule';
 import PartnersModule from '@/modules/PartnersModule';
@@ -37,6 +37,25 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
   useEffectOnce(() => {
     setGlobalConfig();
   });
+
+  useEffect(() => {
+    if (pageData?.moduleList.length) {
+      const hash = window.location.hash;
+      const id = hash ? hash.split('#')[1] : '';
+      if (id) {
+        const timer = setTimeout(() => {
+          const doc = document.getElementById(id);
+          if (doc) {
+            doc.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+          clearTimeout(timer);
+        }, 500);
+      }
+    }
+  }, [pageData?.moduleList.length]);
 
   return (
     <main className="home-page">

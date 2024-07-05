@@ -198,6 +198,7 @@ const formatModule = (moduleItem: any): Module | undefined => {
         subTitle: {
           text: moduleItem.subTitle,
         },
+        name: moduleItem.name,
         dataArray: formatDescriptionList(moduleItem.dataArray),
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,

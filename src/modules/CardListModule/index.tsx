@@ -49,6 +49,7 @@ export default function CardListModule({ moduleData }: ICardListModuleProps) {
   );
   return (
     <section
+      id={name}
       className={clsx(['section-container', styles.cardListModuleWrap])}
       style={{
         backgroundColor: commonStyles.defaultBackgroundColor,
