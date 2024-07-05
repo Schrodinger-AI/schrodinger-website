@@ -20,9 +20,9 @@ export const getLineChartConfig = (
     tooltip: {
       show: true,
       formatter: (params: any) => {
-        const preData = lineData?.dataY[params.dataIndex - 1] || 0;
-        const added = params.value - preData;
-        return `current: ${params.value}M <br /> added: ${added}M`;
+        // const preData = lineData?.dataY[params.dataIndex - 1] || 0;
+        // const added = params.value - preData;
+        return `Estimated Supply: ${params.value} M`;
       },
       backgroundColor: '#2E2E3A',
       textStyle: {
