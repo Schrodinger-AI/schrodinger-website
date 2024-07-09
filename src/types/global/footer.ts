@@ -5,6 +5,7 @@ import { GlobalModuleType } from './index';
 export type Footer = {
   key: GlobalModuleType.Footer;
   logo: ImageWrapper;
+  backgroundImage?: ImageWrapper;
   description?: string;
   menuList: Array<TopMenu>;
   socialMediaList: SocialMedia[];

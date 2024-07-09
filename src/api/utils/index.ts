@@ -75,6 +75,7 @@ export const getHeader = async (): Promise<Header> => {
       logo: data.defaultLogo,
       menuList,
       actionButton: data.actionButton ? formatCommonButton(data.actionButton) : undefined,
+      backgroundImage: data.backgroundImage || undefined,
       commonStyles: {
         defaultBackgroundColor: data.defaultBackgroundColor || undefined,
         firstMenuDefaultFontColor: data.firstMenuDefaultFontColor || undefined,
@@ -105,6 +106,7 @@ export const getFooter = async (): Promise<Footer> => {
       description: data.description || undefined,
       menuList,
       socialMediaList,
+      backgroundImage: data.backgroundImage || undefined,
       commonStyles: {
         defaultBackgroundColor: data.defaultBackgroundColor || undefined,
         dividingLineColor: data.dividingLineColor || undefined,
@@ -200,6 +202,7 @@ const formatModule = (moduleItem: any): Module | undefined => {
         },
         name: moduleItem.name,
         dataArray: formatDescriptionList(moduleItem.dataArray),
+        backgroundImage: moduleItem.backgroundImage || undefined,
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,
           paddingBottom: moduleItem.paddingBottom || undefined,
@@ -218,6 +221,7 @@ const formatModule = (moduleItem: any): Module | undefined => {
           text: moduleItem.title,
         },
         list: formatPartnerList(moduleItem.list),
+        backgroundImage: moduleItem.backgroundImage || undefined,
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,
           paddingBottom: moduleItem.paddingBottom || undefined,
@@ -259,6 +263,7 @@ const formatModule = (moduleItem: any): Module | undefined => {
             }
           : undefined,
         featureList: formatFeatureList(moduleItem.featureList),
+        backgroundImage: moduleItem.backgroundImage || undefined,
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,
           paddingBottom: moduleItem.paddingBottom || undefined,
@@ -291,6 +296,22 @@ const formatModule = (moduleItem: any): Module | undefined => {
         key: ModuleType.TabsModule,
         index: moduleItem.index,
         content: moduleItem.content,
+        backgroundImage: moduleItem.backgroundImage || undefined,
+        commonStyles: {
+          paddingTop: moduleItem.paddingTop || undefined,
+          paddingBottom: moduleItem.paddingBottom || undefined,
+          mobilePaddingTop: moduleItem.mobilePaddingTop || undefined,
+          mobilePaddingBottom: moduleItem.mobilePaddingBottom || undefined,
+          defaultBackgroundColor: moduleItem.defaultBackgroundColor || undefined,
+        },
+      };
+    case ModuleType.CollapseModule:
+      return {
+        key: ModuleType.CollapseModule,
+        index: moduleItem.index,
+        title: moduleItem.title,
+        list: moduleItem.list || [],
+        backgroundImage: moduleItem.backgroundImage || undefined,
         commonStyles: {
           paddingTop: moduleItem.paddingTop || undefined,
           paddingBottom: moduleItem.paddingBottom || undefined,

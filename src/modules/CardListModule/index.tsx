@@ -10,7 +10,7 @@ export interface ICardListModuleProps {
 }
 
 export default function CardListModule({ moduleData }: ICardListModuleProps) {
-  const { title, subTitle, dataArray, commonStyles, name } = moduleData;
+  const { title, subTitle, dataArray, commonStyles, name, backgroundImage } = moduleData;
   const { getVertical } = useGetVertical();
 
   const cardList = (
@@ -55,6 +55,7 @@ export default function CardListModule({ moduleData }: ICardListModuleProps) {
         backgroundColor: commonStyles.defaultBackgroundColor,
         paddingTop: getVertical(commonStyles).top + 'px',
         paddingBottom: getVertical(commonStyles).bottom + 'px',
+        backgroundImage: `url(${backgroundImage?.filename_disk ? s3Url + backgroundImage?.filename_disk : ''})`,
       }}>
       <section className={styles.cardListModule}>
         <h1 className={styles.title}>{title?.text}</h1>

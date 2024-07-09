@@ -4,6 +4,9 @@
 
 .featureCardModuleWrapper {
   background: $page-bg;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .featureCardModuleContentWrapper {
     gap: 80px;

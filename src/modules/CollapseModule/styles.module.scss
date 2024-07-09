@@ -1,0 +1,112 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.scss';
+@import '/src/assets/theme/constants.scss';
+
+.collapseModuleWrap {
+  background: $page-bg;
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    max-width: $divide-1080;
+    width: 100%;
+    
+    .title {
+      font-size: 40px;
+      font-weight: 600;
+      color: $primary-text;
+      line-height: 48px;
+      text-align: center;
+    }
+
+    .contentWrap {
+      margin-top: 80px;
+
+      :global {
+        .ant-collapse-item {
+          border-bottom: 1px solid $border;
+          .ant-collapse-header {
+            padding: 24px 32px 24px 0;
+
+            .ant-collapse-expand-icon .anticon {
+              color: $primary-text;
+            }
+
+            .ant-collapse-header-text {
+              font-size: 32px;
+              line-height: 48px;
+              color: $primary-text;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+          }
+
+          .ant-collapse-content {
+            .ant-collapse-content-box {
+              padding: 0 0 24px;
+            }
+          }
+        }
+      }
+
+      .collapseItemContent {
+        font-size: 18px;
+        line-height: 26px;
+        color: $secondary-text;
+        display: flex;
+        flex-direction: column;
+
+        .collapseItemContentItem {
+          display: flex;
+
+          .collapseItemContentItemSort {
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $divide-991) {
+    .container {
+      max-width: 100%;
+      width: 100%;
+
+      .title {
+        font-size: 32px;
+        line-height: 48px;
+      }
+
+      .contentWrap {
+        margin-top: 32px;
+
+        :global {
+          .ant-collapse-item {
+            border-bottom: 1px solid $border;
+            .ant-collapse-header {
+              padding: 16px 0;
+              .ant-collapse-header-text {
+                font-size: 20px;
+                line-height: 28px;
+              }
+            }
+  
+            .ant-collapse-content {
+              .ant-collapse-content-box {
+                padding: 0 0 24px;
+              }
+            }
+          }
+        }
+  
+        .collapseItemContent {
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

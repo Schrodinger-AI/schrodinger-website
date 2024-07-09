@@ -6,6 +6,7 @@ import { IButtonBelowTextModule } from './buttonBelowTextModule';
 import { IFeatureCardModule } from './featureCardModule';
 import { IInfiniteScrollCarouselModule } from './infiniteScrollCarouselModule';
 import { ITabsModule } from './tabsModule';
+import { ICollapseModule } from './collapseModule';
 
 export type Module =
   | IBrandModule
@@ -15,7 +16,8 @@ export type Module =
   | IButtonBelowTextModule
   | IFeatureCardModule
   | IInfiniteScrollCarouselModule
-  | ITabsModule;
+  | ITabsModule
+  | ICollapseModule;
 
 export enum ModuleType {
   BrandModule = 'BrandModule',
@@ -26,4 +28,5 @@ export enum ModuleType {
   FeatureCardModule = 'FeatureCardModule',
   InfiniteScrollCarouselModule = 'InfiniteScrollCarouselModule',
   TabsModule = 'TabsModule',
+  CollapseModule = 'CollapseModule',
 }

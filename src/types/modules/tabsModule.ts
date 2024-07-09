@@ -1,4 +1,5 @@
 import { ModuleType } from '.';
+import { ImageWrapper } from '../components/image';
 
 export interface ITabsModuleItemsContentDataList {
   label: string;
@@ -44,6 +45,7 @@ export interface ITabsModule {
   content: {
     items: ITabsModuleItemsContent[];
   };
+  backgroundImage?: ImageWrapper;
   commonStyles: {
     paddingTop?: string;
     paddingBottom?: string;

@@ -8,6 +8,7 @@ export type Header = {
   logo: ImageWrapper;
   menuList: Array<TopMenu>;
   actionButton?: CommonButtonComponent;
+  backgroundImage?: ImageWrapper;
   commonStyles?: HeaderCommonStyles;
 };
 
