@@ -5,6 +5,8 @@ import styles from './styles.module.scss';
 import { s3Url } from '@/constants/network';
 import { ICollapseModule, SortingMethods } from '@/types/modules/collapseModule';
 import { Collapse } from 'antd';
+import { iconArrowDown } from '@/assets/images';
+import Image from 'next/image';
 
 export default function CollapseModule({ module }: { module: ICollapseModule }) {
   const { getVertical } = useGetVertical();
@@ -53,6 +55,19 @@ export default function CollapseModule({ module }: { module: ICollapseModule }) 
     return null;
   };
 
+  const expandIcon = (isActive?: boolean) => {
+    return (
+      <Image
+        src={iconArrowDown}
+        className={styles.collapseItemIcon}
+        style={{
+          transform: isActive ? 'rotate(180deg) translateY(50%)' : 'translateY(-50%)',
+        }}
+        alt={''}
+      />
+    );
+  };
+
   return (
     <section
       className={clsx(['section-container', styles.collapseModuleWrap])}
@@ -68,7 +83,7 @@ export default function CollapseModule({ module }: { module: ICollapseModule }) 
         {module.title ? <h1 className={styles.title}>{module.title}</h1> : null}
         {module.list.length ? (
           <div className={styles.contentWrap}>
-            <Collapse ghost expandIconPosition="end">
+            <Collapse ghost expandIconPosition="end" expandIcon={(panelProps) => expandIcon(panelProps.isActive)}>
               {module.list.map((item, index) => {
                 return (
                   <Collapse.Panel header={item.label} key={index}>

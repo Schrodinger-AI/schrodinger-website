@@ -27,7 +27,6 @@ export default function BrandModule({ type, moduleData }: BrandModuleProps) {
     async (service: string) => {
       try {
         const res = await serveGet(service, moduleData.dataList?.params);
-        console.log('=====BrandModule', res);
         setDataListValue(res);
         // eslint-disable-next-line no-empty
       } catch (error) {}

@@ -13,6 +13,7 @@ import iconNavSelectedWhite from './iconNavSelectedWhite.svg';
 import iconArrowRightBlue from './iconArrowRightBlue.svg';
 import iconArrowRightGray from './iconArrowRightGray.svg';
 import iconClose from './iconClose.svg';
+import iconArrowDown from './iconArrowDown.svg';
 
 export {
   appStoreDownload,
@@ -26,4 +27,5 @@ export {
   iconClose,
   iconMenuWhite,
   iconMenuGray,
+  iconArrowDown,
 };
