@@ -47,7 +47,7 @@ export function isPortkeyApp() {
 }
 
 export const openExternalLink: Window['open'] = (url, target = '_blank') => {
-  console.log('=====openExternalLink');
+  console.log('=====openExternalLink', url);
   if (!url) return null;
   if (isPortkeyApp()) {
     if (typeof url !== 'string') url = url.toString();
