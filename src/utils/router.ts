@@ -32,7 +32,6 @@ export function switchPage(type: NavigationType, path?: string | ROUTER, callbac
       callback?.();
       break;
     case NavigationType.OPEN_NEW_TAB_DISCOVER:
-      console.log('=====openExternalLink OPEN_NEW_TAB_DISCOVER');
       openExternalLink(path);
       callback?.();
       break;
@@ -47,7 +46,6 @@ export function isPortkeyApp() {
 }
 
 export const openExternalLink: Window['open'] = (url, target = '_blank') => {
-  console.log('=====openExternalLink', url);
   if (!url) return null;
   if (isPortkeyApp()) {
     if (typeof url !== 'string') url = url.toString();
