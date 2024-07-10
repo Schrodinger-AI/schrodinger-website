@@ -9,12 +9,12 @@ export const BackEndNetWorkMap: Record<string, WebsiteNetworkConfig> = {
   schrodinger: {
     dev: {
       cmsUrl: 'https://testnet-cms.schrodingerai.com/',
-      apiUrl: 'https://sgr.schrodingerai.com/api/',
+      apiUrl: 'https://cat.schrodingerai.com/api/',
       s3Url: 'https://schrodinger-testnet.s3.amazonaws.com/',
     },
     mainnet: {
       cmsUrl: 'https://mainnet-cms.schrodingernft.ai/',
-      apiUrl: 'https://sgr.schrodingernft.ai/api/',
+      apiUrl: 'https://cat.schrodingernft.ai/api/',
       s3Url: 'https://schrodinger-mainnet.s3.amazonaws.com/',
     },
   },
