@@ -16,6 +16,7 @@ import FeatureCardModule from '@/modules/FeatureCardModule';
 import InfiniteScrollCarouselModule from '@/modules/InfiniteScrollCarouselModule';
 import { ButtonBelowTextModule } from '@/modules/ButtonBelowText';
 import TabsModule from '@/modules/TabsModule';
+import CollapseModule from '@/modules/CollapseModule';
 
 export default function HomeMain({ headerData, footerData, pageData }: IHomePageProps) {
   const uaType = useUserAgent();
@@ -89,6 +90,9 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
           }
           if (module.key === ModuleType.TabsModule) {
             return <TabsModule key={pageData.key + '_' + index + '_' + module.key} module={module} />;
+          }
+          if (module.key === ModuleType.CollapseModule) {
+            return <CollapseModule key={pageData.key + '_' + index + '_' + module.key} module={module} />;
           }
           return <></>;
         })}

@@ -31,7 +31,27 @@ export function switchPage(type: NavigationType, path?: string | ROUTER, callbac
       openWithBlank(path);
       callback?.();
       break;
+    case NavigationType.OPEN_NEW_TAB_DISCOVER:
+      openExternalLink(path);
+      callback?.();
+      break;
     default:
       break;
   }
 }
+
+export function isPortkeyApp() {
+  const ua = navigator.userAgent;
+  return ua.indexOf('Portkey did Mobile') !== -1;
+}
+
+export const openExternalLink: Window['open'] = (url, target = '_blank') => {
+  if (!url) return null;
+  if (isPortkeyApp()) {
+    if (typeof url !== 'string') url = url.toString();
+    window.location.href = url;
+    return null;
+  } else {
+    return window.open(url, target);
+  }
+};
