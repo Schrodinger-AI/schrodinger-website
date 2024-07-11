@@ -5,6 +5,9 @@
 .footer {
   padding-top: 60px;
   min-width: $page-min-width;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .footerBody {
     width: 100%;

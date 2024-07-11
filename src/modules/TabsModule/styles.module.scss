@@ -3,8 +3,12 @@
 @import '/src/assets/theme/constants.scss';
 
 .tabsModuleWrap {
+  background: $page-bg;
   display: flex;
   justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   .container {
     max-width: $divide-1080;
     width: 100%;

@@ -10,7 +10,7 @@ interface IPartnersModuleProps {
 }
 
 export default function PartnersModule({ module }: IPartnersModuleProps) {
-  const { title, list, commonStyles } = module;
+  const { title, list, commonStyles, backgroundImage } = module;
   const { getVertical } = useGetVertical();
   return (
     <section
@@ -18,6 +18,8 @@ export default function PartnersModule({ module }: IPartnersModuleProps) {
       style={{
         paddingTop: getVertical(commonStyles).top + 'px',
         paddingBottom: getVertical(commonStyles).bottom + 'px',
+        backgroundColor: commonStyles.defaultBackgroundColor,
+        backgroundImage: `url(${backgroundImage?.filename_disk ? s3Url + backgroundImage?.filename_disk : ''})`,
       }}>
       <section className={styles.content}>
         <h1 className={styles.sectionTitle}>{title?.text}</h1>

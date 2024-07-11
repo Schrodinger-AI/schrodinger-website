@@ -91,7 +91,13 @@ export default function NavHeader({ className, style, path = ROUTER.DEFAULT, dat
         styles.navBlackHeader,
         className,
       ])}
-      style={{ backgroundColor: data.commonStyles?.defaultBackgroundColor, ...style }}>
+      style={{
+        backgroundColor: data.commonStyles?.defaultBackgroundColor,
+        backgroundImage: `url(${
+          data?.backgroundImage?.filename_disk ? s3Url + data?.backgroundImage?.filename_disk : ''
+        })`,
+        ...style,
+      }}>
       <div className={clsx(['page-container', styles.navHeader])}>
         <CommonImage
           quality={100}

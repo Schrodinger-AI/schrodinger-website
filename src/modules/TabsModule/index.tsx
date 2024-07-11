@@ -9,6 +9,7 @@ import { ITabsModule, ITabsModuleItemsContent } from '@/types/modules/tabsModule
 import TabsImage from '@/components/TabsContent/TabsImage';
 import DescriptionList from '@/components/TabsContent/DescriptionList';
 import PurchaseCardWrap from '@/components/TabsContent/PurchaseCard';
+import { s3Url } from '@/constants/network';
 
 export default function TabsModule({ module }: { module: ITabsModule }) {
   const { getVertical } = useGetVertical();
@@ -69,6 +70,9 @@ export default function TabsModule({ module }: { module: ITabsModule }) {
         paddingTop: getVertical(module.commonStyles).top + 'px',
         paddingBottom: getVertical(module.commonStyles).bottom + 'px',
         backgroundColor: defaultBackgroundColor,
+        backgroundImage: `url(${
+          module?.backgroundImage?.filename_disk ? s3Url + module.backgroundImage.filename_disk : ''
+        })`,
       }}>
       <section className={styles.container}>
         <div className={styles.tabsModuleRadioWrap}>

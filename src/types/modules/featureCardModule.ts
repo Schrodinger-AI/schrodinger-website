@@ -18,6 +18,7 @@ export interface IFeatureCardModule {
     text: string;
   };
   featureList: IFeatureCardItem[];
+  backgroundImage?: ImageWrapper;
   commonStyles?: {
     paddingTop?: string;
     paddingBottom?: string;

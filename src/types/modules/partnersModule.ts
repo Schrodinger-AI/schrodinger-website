@@ -8,6 +8,7 @@ export interface IPartnersModule {
     text: string;
   };
   list?: Array<IPartnerItem>;
+  backgroundImage?: ImageWrapper;
   commonStyles: {
     paddingTop?: string;
     paddingBottom?: string;

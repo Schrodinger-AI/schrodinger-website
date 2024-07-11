@@ -7,7 +7,7 @@ import DownloadButtonGroup from '@/components/DownloadButtonGroup';
 import { ButtonKey } from '@/types/components/button';
 import { BrandModuleType, IBrandModule } from '@/types/modules/brandModule';
 import { s3Url } from '@/constants/network';
-import { openWithBlank } from '@/utils/router';
+import { openExternalLink } from '@/utils/router';
 import CommonButton from '@/components/CommonButton';
 import useGetVertical from '@/hooks/useGetVertical';
 import { useCallback, useEffect, useState } from 'react';
@@ -27,7 +27,6 @@ export default function BrandModule({ type, moduleData }: BrandModuleProps) {
     async (service: string) => {
       try {
         const res = await serveGet(service, moduleData.dataList?.params);
-        console.log('=====BrandModule', res);
         setDataListValue(res);
         // eslint-disable-next-line no-empty
       } catch (error) {}
@@ -104,7 +103,7 @@ export default function BrandModule({ type, moduleData }: BrandModuleProps) {
                     backgroundColor={btn.commonStyles.default?.backgroundColor}
                     borderColor={btn.commonStyles.default?.borderColor}
                     width={btn.commonStyles.width ? btn.commonStyles.width + 'px' : 'auto'}
-                    onClick={() => openWithBlank(btn.link?.url, btn.link?.target)}
+                    onClick={() => openExternalLink(btn.link?.url, btn.link?.target)}
                   />
                 );
               })}

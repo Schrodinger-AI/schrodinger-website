@@ -1,5 +1,6 @@
 import { ModuleType } from '.';
 import { DescriptionComponent } from '../components/description';
+import { ImageWrapper } from '../components/image';
 
 export interface ICardListModule {
   key: ModuleType.CardListModule;
@@ -12,6 +13,7 @@ export interface ICardListModule {
   };
   name?: string;
   dataArray?: Array<DescriptionComponent>;
+  backgroundImage?: ImageWrapper;
   commonStyles: {
     paddingTop?: string;
     paddingBottom?: string;
