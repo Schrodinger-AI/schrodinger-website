@@ -33,7 +33,7 @@ export default function CardListModule({ moduleData }: ICardListModuleProps) {
               className={styles.cardImgContainer}>
               <CommonImage
                 quality={100}
-                width={520}
+                width={540}
                 height={242}
                 src={item.icon?.filename_disk ? s3Url + item?.icon.filename_disk : ''}
                 className={styles.cardImg}
