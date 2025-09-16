@@ -51,6 +51,7 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
             <strong>All services</strong> will terminate on <strong>October 27, 2025 (UTC 00:00)</strong>
           </p>
 
+          <br />
           <h3>📊 Token Burn Information:</h3>
           <ul>
             <li>
@@ -63,6 +64,7 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
             <li>Trading continues on exchanges</li>
           </ul>
 
+          <br />
           <h3>🎮 Service Impact:</h3>
           <ul>
             <li>
@@ -79,6 +81,7 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
             </li>
           </ul>
 
+          <br />
           <h3>⏰ Timeline:</h3>
           <ul>
             <li>
