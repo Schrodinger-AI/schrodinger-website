@@ -48,17 +48,17 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           <h2>Schrödinger's Cat Service Ending</h2>
           <p>
-            <strong>All services</strong> will terminate on <strong>October 27, 2025 (UTC 00:00)</strong>
+            <strong>All services</strong> will terminate on <strong>October 16, 2025 (UTC 00:00)</strong>
           </p>
 
           <br />
           <h3>📊 Token Burn Information:</h3>
           <ul>
             <li>
-              <strong>20,321,700 SGR (96.77%)</strong> will be burned
+              <strong>20,321,450 SGR (96.77%)</strong> will be burned
             </li>
             <li>
-              Burn execution: <strong>October 28, 2025</strong>
+              Burn execution: <strong>October 17, 2025</strong>
             </li>
             <li>Your existing tokens remain unaffected</li>
             <li>Trading continues on exchanges</li>
@@ -85,13 +85,13 @@ export default function HomeMain({ headerData, footerData, pageData }: IHomePage
           <h3>⏰ Timeline:</h3>
           <ul>
             <li>
-              <strong>Oct 27:</strong> Services terminate
+              <strong>Oct 16:</strong> Services terminate
             </li>
             <li>
-              <strong>Oct 28:</strong> SGR token burn
+              <strong>Oct 17:</strong> SGR token burn
             </li>
             <li>
-              <strong>Oct 29:</strong> Burn verification published
+              <strong>Oct 18:</strong> Burn verification published
             </li>
           </ul>
         </div>
